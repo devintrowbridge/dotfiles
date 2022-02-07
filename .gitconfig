@@ -1,0 +1,16 @@
+[user]
+	name = Devin Trowbridge
+	email = dtrowbridge@parrylabs.com
+[init]
+	defaultBranch = main
+[color]
+	status = auto
+	branch = auto
+	interactive = auto
+	diff = auto
+[credential]
+	helper = store
+[pull]
+	ff = only
+[core]
+	excludesfile = /home/devin/.gitignore

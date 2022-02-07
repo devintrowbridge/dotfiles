@@ -1,0 +1,10 @@
+# vscode
+*.code-workspace
+*.vscode
+
+# generic ignores
+notes*
+.cache/
+
+# ignore configuration specific to organizations
+org/
