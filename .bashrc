@@ -25,8 +25,8 @@ fi
 # Use GNU ls colors when tab-completing files
 set colored-stats on
 
-source .aliases
-source .env
+source $HOME/.aliases
+source $HOME/.env
 
 if [ -f "org/.bashrc" ] ; then 
   source org/.bashrc
