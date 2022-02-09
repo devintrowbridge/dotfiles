@@ -12,8 +12,10 @@ then
 fi
 export PATH
 
-# User specific aliases and functions
-. "$HOME/.cargo/env"
+# Rust
+if [ -f "$HOME/.cargo" ]; then
+  . "$HOME/.cargo/env"
+fi
 
 # advanced tab completion
 if [ -f /etc/bash_completion ]; then
