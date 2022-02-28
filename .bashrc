@@ -14,7 +14,7 @@ export PATH
 
 # Rust
 if [ -f "$HOME/.cargo" ]; then
-  . "$HOME/.cargo/env"
+  source "$HOME/.cargo/env"
 fi
 
 # advanced tab completion
