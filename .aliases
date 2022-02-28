@@ -2,6 +2,7 @@ alias python=python3
 
 # git
 alias gitlog="git log --oneline --decorate"
+alias difftip="git diff HEAD^ HEAD"
 
 # shell command shorthands
 # This is an improvised version of the mkcd command at http://superuser.com/questions/152794/is-there-a-shortcut-to-mkdir-foo-and-immediately-cd-into-it
