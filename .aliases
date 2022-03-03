@@ -22,3 +22,6 @@ function cdls { cd "$@" && ls; }
 # run last command as sudo
 alias please='sudo $(history -p !!)'
 alias ll="ls -ag"
+
+# podman/docker
+podman rmi -f $(podman images --filter dangling=true -q --no-trunc)
