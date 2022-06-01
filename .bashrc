@@ -13,7 +13,7 @@ fi
 export PATH
 
 # Rust
-if [ -f "$HOME/.cargo" ]; then
+if [ -d "$HOME/.cargo" ]; then
   source "$HOME/.cargo/env"
 fi
 
@@ -31,3 +31,6 @@ source $HOME/.env
 if [ -f "org/.bashrc" ] ; then 
   source org/.bashrc
 fi
+
+export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64/
+export DISPLAY=localhost:0.0
