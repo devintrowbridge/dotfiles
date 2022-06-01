@@ -24,4 +24,11 @@ alias please='sudo $(history -p !!)'
 alias ll="ls -ag"
 
 # podman/docker
-podman rmi -f $(podman images --filter dangling=true -q --no-trunc)
+function rmd {
+  podman images | grep "<none>" | awk '{print $3}' | xargs podman rmi
+}
+
+function peb {
+  podman exec -it "$1" /bin/bash
+}
+
