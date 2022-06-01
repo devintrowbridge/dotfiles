@@ -1,10 +1,16 @@
 # vscode
 *.code-workspace
 *.vscode
+.devcontainer.json
 
 # generic ignores
 notes*
 .cache/
+.env
 
 # ignore configuration specific to organizations
 org/
+cicd-scripts/
+
+# package building
+rpmbuild/
