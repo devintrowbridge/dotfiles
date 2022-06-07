@@ -7,7 +7,7 @@ fi
 
 # git
 git config --global core.excludesfile $HOME/.gitignore
-git config --gobal user.name "Devin Trowbridge"
+git config --global user.name "Devin Trowbridge"
 
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
