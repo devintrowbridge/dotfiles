@@ -10,7 +10,7 @@ notes*
 
 # ignore configuration specific to organizations
 org/
-cicd-scripts/
+cicd-scripts
 
 # package building
 rpmbuild/

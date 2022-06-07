@@ -5,6 +5,10 @@ if [ -f /etc/bashrc ]; then
   . /etc/bashrc
 fi
 
+# git
+git config --global core.excludesfile $HOME/.gitignore
+git config --gobal user.name "Devin Trowbridge"
+
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
 then
