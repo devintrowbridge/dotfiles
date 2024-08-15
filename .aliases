@@ -1,35 +1,26 @@
-alias python=python3
-
 # git
-alias gitlog="git log --oneline --decorate"
-alias difftip="git diff HEAD^ HEAD"
-alias gitsubup="git submodule init && git submodule update"
+alias glo="git log --oneline --decorate"               # git log oneline
+alias gdt="git diff HEAD^ HEAD"                        # git diff tip
+alias gsu="git submodule init && git submodule update" # git sub & up
+alias gcm="git commit -m"                              # git commit message
 
 # shell command shorthands
-# This is an improvised version of the mkcd command at http://superuser.com/questions/152794/is-there-a-shortcut-to-mkdir-foo-and-immediately-cd-into-it
-function mkcd {
-  local last=$(eval "echo \$$#")
-  if [ ! -n "$last" ]; then
-    echo "Enter a directory name"
-  elif [ -d $last ]; then
-    echo "\`$last' already exists"
-  else
-    mkdir $@ && cd $last
-  fi
-}
-
 function cdls { cd "$@" && ls; }
 
 # run last command as sudo
 alias please='sudo $(history -p !!)'
 alias ll="ls -ag"
 
-# podman/docker
-function rmd {
-  podman images | grep "<none>" | awk '{print $3}' | xargs podman rmi
+# docker remove dangling
+function drd {
+  docker images | grep "<none>" | awk '{print $3}' | xargs docker rmi
 }
 
-function peb {
-  podman exec -it "$1" /bin/bash
+# docker exec bash
+function deb {
+  docker exec -it "$1" /bin/bash
 }
 
+function mp4togif {
+  ffmpeg -i "$1" -vf "fps=10,scale=1280:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif && cp output.gif .
+}

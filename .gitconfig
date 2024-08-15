@@ -1,6 +1,7 @@
 [user]
 	name = Devin Trowbridge
-	email = dtrowbridge@parrylabs.com
+	# email=devin.trow@gmail.com
+	# put email in /etc/gitconfig
 [init]
 	defaultBranch = main
 [color]
@@ -14,3 +15,12 @@
 	ff = only
 [core]
 	excludesfile = /home/devin/.gitignore
+	editor = vim
+[merge]
+	conflictstyle = diff3
+[rebase]
+	autostash = true
+[push]
+	default = current
+[diff]
+	algorithm = histogram

@@ -29,12 +29,24 @@ fi
 # Use GNU ls colors when tab-completing files
 set colored-stats on
 
+# shellcheck source=/home/devin/.aliases
 source $HOME/.aliases
 source $HOME/.env
+source $HOME/.keys
+source $HOME/.org
 
-if [ -f "org/.bashrc" ] ; then 
-  source org/.bashrc
+source "$HOME/.cargo/env"
+
+# For podman temp files
+if [[ -z "$XDG_RUNTIME_DIR" ]]; then
+  export XDG_RUNTIME_DIR=/run/user/$UID
+  if [[ ! -d "$XDG_RUNTIME_DIR" ]]; then
+    export XDG_RUNTIME_DIR=/tmp/$USER-runtime
+    if [[ ! -d "$XDG_RUNTIME_DIR" ]]; then
+      mkdir -m 0700 "$XDG_RUNTIME_DIR"
+    fi
+  fi
 fi
 
-export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64/
-export DISPLAY=localhost:0.0
+export DISPLAY=$(ip route list default | awk '{print $3}'):0
+export LIBGL_ALWAYS_INDIRECT=1

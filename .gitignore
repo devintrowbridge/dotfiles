@@ -9,9 +9,8 @@ notes*
 .cache/
 .env
 
-# ignore configuration specific to organizations
-org/
-cicd-scripts
-
 # package building
 rpmbuild/
+
+# job specific stuff i.e. server ips, internal repos, etc
+.org
