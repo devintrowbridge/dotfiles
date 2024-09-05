@@ -8,9 +8,13 @@
 notes*
 .cache/
 .env
+ignore/
 
 # package building
 rpmbuild/
 
 # job specific stuff i.e. server ips, internal repos, etc
 .org
+
+# python 
+.venv
