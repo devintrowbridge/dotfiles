@@ -11,3 +11,4 @@ ln -svf ${BASEDIR}/.vimrc ~/.vimrc
 ln -svf ${BASEDIR}/.env ~/.env
 ln -svf ${BASEDIR}/.aliases ~/.aliases
 ln -svf ${BASEDIR}/.org ~/.org
+
