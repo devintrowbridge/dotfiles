@@ -1,9 +1,14 @@
 # .bashrc
 
+function sourceif()
+{
+  if [ -f "$1" ]; then
+    source "$1"
+  fi
+}
+
 # Source global definitions
-if [ -f /etc/bashrc ]; then
-  . /etc/bashrc
-fi
+sourceif /etc/bashrc
 
 # git
 git config --global core.excludesfile $HOME/.gitignore
@@ -17,25 +22,19 @@ fi
 export PATH
 
 # Rust
-if [ -d "$HOME/.cargo" ]; then
-  source "$HOME/.cargo/env"
-fi
+sourceif "$HOME/.cargo/env"
 
 # advanced tab completion
-if [ -f /etc/bash_completion ]; then
-  source /etc/bash_completion
-fi
+sourceif /etc/bash_completion
 
 # Use GNU ls colors when tab-completing files
 set colored-stats on
 
 # shellcheck source=/home/devin/.aliases
-source $HOME/.aliases
-source $HOME/.env
-source $HOME/.keys
-source $HOME/.org
-
-source "$HOME/.cargo/env"
+sourceif $HOME/.aliases
+sourceif $HOME/.env
+sourceif $HOME/.keys
+sourceif $HOME/.org
 
 # For podman temp files
 if [[ -z "$XDG_RUNTIME_DIR" ]]; then
