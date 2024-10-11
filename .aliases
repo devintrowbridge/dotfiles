@@ -3,6 +3,7 @@ alias glo="git log --oneline --decorate"               # git log oneline
 alias gdt="git diff HEAD^ HEAD"                        # git diff tip
 alias gsu="git submodule init && git submodule update" # git sub & up
 alias gcm="git commit -m"                              # git commit message
+alias gs="git status"
 
 # shell command shorthands
 function cdls { cd "$@" && ls; }
@@ -29,3 +30,9 @@ function drb {
 function mp4togif {
   ffmpeg -i "$1" -vf "fps=10,scale=1280:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif && cp output.gif .
 }
+
+# grow partition
+# 1. grow the partition
+# sudo growpart /dev/sda 2 # separate partition number from the device
+# 2. grow the filesystem
+# sudo resize2fs /dev/sda2
