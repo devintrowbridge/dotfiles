@@ -47,5 +47,7 @@ if [[ -z "$XDG_RUNTIME_DIR" ]]; then
   fi
 fi
 
-export DISPLAY=$(ip route list default | awk '{print $3}'):0
-export LIBGL_ALWAYS_INDIRECT=1
+# uncomment for xforwarding
+# export DISPLAY=$(ip route list default | awk '{print $3}'):0
+# export LIBGL_ALWAYS_INDIRECT=1
+
