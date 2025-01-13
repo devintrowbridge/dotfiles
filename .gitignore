@@ -9,6 +9,8 @@ notes*
 .cache/
 .env
 ignore/
+*.tar
+*.tar.gz
 
 # package building
 rpmbuild/

@@ -30,6 +30,15 @@ sourceif /etc/bash_completion
 # Use GNU ls colors when tab-completing files
 set colored-stats on
 
+printf "%s\n" "USER: $(echo $USER)"
+printf "%s\n" "DATE: $(date)"
+printf "%s\n" "UPTIME: $(uptime -p)"
+printf "%s\n" "HOSTNAME: $(hostname -f)"
+printf "%s\n" "KERNEL: $(uname -rms)"
+printf "%s\n" "MEMORY: $(free -m -h | awk '/Mem/{print $3"/"$2}')"
+printf "\n"
+
+
 # shellcheck source=/home/devin/.aliases
 sourceif $HOME/.aliases
 sourceif $HOME/.env
